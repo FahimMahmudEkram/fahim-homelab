@@ -1,0 +1,21 @@
+name: Repository Preflight
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Run repository preflight
+        run: ./scripts/git-preflight.sh
