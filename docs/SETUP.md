@@ -22,11 +22,10 @@ If it already exists, Docker will report that; that is fine.
 ## 1. Clone the repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/FahimMahmudEkram/fahim-homelab.git
 cd fahim-homelab
 ```
 
-For a private repository, authenticate to GitHub before cloning.
 
 ## 2. Review configuration
 
