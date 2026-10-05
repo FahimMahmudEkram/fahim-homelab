@@ -2,6 +2,10 @@
 
 A secure, self-hosted infrastructure platform built on Ubuntu Server, Docker Compose, Caddy, and Tailscale.
 
+[![Repository Preflight](https://github.com/FahimMahmudEkram/fahim-homelab/actions/workflows/preflight.yml/badge.svg?branch=main)](https://github.com/FahimMahmudEkram/fahim-homelab/actions/workflows/preflight.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+
 
 [Architecture](docs/architecture.md) · [Setup Guide](docs/SETUP.md) · [Security Design](docs/SECURITY.md) · [Screenshots](docs/SCREENSHOTS.md) · [Project Overview](docs/PROJECT-OVERVIEW.md)
 
