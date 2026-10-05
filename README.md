@@ -17,6 +17,13 @@ Uptime Kuma provides service availability monitoring and gives a centralized vie
 
 ![Uptime Kuma monitoring dashboard](docs/screenshots/uptime-kuma.png)
 
+### Infrastructure Monitoring
+
+Beszel provides host-level monitoring for CPU, memory, storage, network activity, and system health.
+
+![Beszel infrastructure monitoring](docs/screenshots/beszel.png)
+
+
 
 
 ## Project at a glance
