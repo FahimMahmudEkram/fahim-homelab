@@ -11,6 +11,13 @@ The homelab is organized through a central dashboard for quickly accessing core 
 
 ![Fahim's Homelab dashboard](docs/screenshots/homepage-dashboard.png)
 
+### Monitoring
+
+Uptime Kuma provides service availability monitoring and gives a centralized view of the homelab's operational health.
+
+![Uptime Kuma monitoring dashboard](docs/screenshots/uptime-kuma.png)
+
+
 
 ## Project at a glance
 
