@@ -29,6 +29,13 @@ AdGuard Home provides network-wide DNS filtering, query visibility, and blocking
 
 ![AdGuard Home dashboard](docs/screenshots/adguard.png)
 
+### Document Management
+
+Paperless-ngx provides a self-hosted document management system with centralized organization and search.
+
+![Paperless-ngx document management](docs/screenshots/paperless.png)
+
+
 
 
 
