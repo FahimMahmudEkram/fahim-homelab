@@ -23,6 +23,13 @@ Beszel provides host-level monitoring for CPU, memory, storage, network activity
 
 ![Beszel infrastructure monitoring](docs/screenshots/beszel.png)
 
+### DNS Filtering
+
+AdGuard Home provides network-wide DNS filtering, query visibility, and blocking of unwanted domains.
+
+![AdGuard Home dashboard](docs/screenshots/adguard.png)
+
+
 
 
 
