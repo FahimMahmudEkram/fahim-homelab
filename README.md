@@ -5,6 +5,13 @@ A secure, self-hosted infrastructure platform built on Ubuntu Server, Docker Com
 
 [Architecture](docs/architecture.md) · [Setup Guide](docs/SETUP.md) · [Security Design](docs/SECURITY.md) · [Screenshots](docs/SCREENSHOTS.md) · [Project Overview](docs/PROJECT-OVERVIEW.md)
 
+## Dashboard
+
+The homelab is organized through a central dashboard for quickly accessing core infrastructure, monitoring, applications, music services, and operational tools.
+
+![Fahim's Homelab dashboard](docs/screenshots/homepage-dashboard.png)
+
+
 ## Project at a glance
 
 This homelab consolidates personal cloud, media, document, finance, monitoring, DNS, and password-management services on a single Ubuntu Server while keeping remote access private through Tailscale.
