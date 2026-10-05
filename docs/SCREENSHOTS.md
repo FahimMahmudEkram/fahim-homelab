@@ -32,6 +32,19 @@ Self-hosted document management and organization.
 
 ![Paperless-ngx](screenshots/paperless.png)
 
+## Nextcloud
+
+Self-hosted cloud storage and file management.
+
+![Nextcloud cloud storage](screenshots/nextcloud.png)
+
+## Navidrome
+
+Private music streaming and library management.
+
+![Navidrome music library](screenshots/navidrome.png)
+
+
 ## Architecture
 
 The system architecture showing the private access layer, reverse proxy, Docker services, persistent storage, and monitoring components.
