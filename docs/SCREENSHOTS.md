@@ -1,35 +1,41 @@
-# Screenshots
+# Project Screenshots
 
-Real screenshots should be added by the project owner. Do not invent or fabricate screenshots for project documentation.
+This page provides visual examples of the homelab's dashboards and operational tooling.
 
-## Recommended screenshots
+## Homepage Dashboard
 
-Place these files in `docs/screenshots/`:
+The central dashboard organizes infrastructure, monitoring, applications, music services, and operational tools.
 
-| File | What to capture |
-|---|---|
-| `01-homepage.png` | Main homelab dashboard |
-| `02-feishin.png` | Music player/library |
-| `03-uptime-kuma.png` | Monitoring dashboard and healthy services |
-| `04-beszel.png` | CPU, memory, disk, and SMART metrics |
-| `05-nextcloud.png` | Cloud storage application |
-| `06-immich.png` | Photo/video library |
+![Homepage dashboard](screenshots/homepage-dashboard.png)
 
-## Before adding screenshots
+## Uptime Kuma
 
-Redact or crop:
+Service availability monitoring and health status across the homelab.
 
-- private IP addresses if you do not want them public,
-- Tailscale hostnames,
-- usernames,
-- email addresses,
-- file names containing personal information,
-- personal photographs/documents,
-- QR codes,
-- API tokens or session information.
+![Uptime Kuma monitoring](screenshots/uptime-kuma.png)
 
-## Taking screenshots
+## Beszel
 
-Use your normal desktop browser or device screenshot tool.
+Host-level monitoring for CPU, memory, storage, network activity, and system health.
 
-The goal is to demonstrate the system's engineering and user experience, not to publish private data.
+![Beszel infrastructure monitoring](screenshots/beszel.png)
+
+## AdGuard Home
+
+Network-wide DNS filtering, query visibility, and blocking statistics.
+
+![AdGuard Home dashboard](screenshots/adguard.png)
+
+## Paperless-ngx
+
+Self-hosted document management and organization.
+
+![Paperless-ngx](screenshots/paperless.png)
+
+## Architecture
+
+The system architecture showing the private access layer, reverse proxy, Docker services, persistent storage, and monitoring components.
+
+![Homelab architecture](architecture.svg)
+
+> Screenshots are sanitized for public documentation. No passwords, tokens, private keys, databases, backups, or other sensitive runtime data are included in this repository.
