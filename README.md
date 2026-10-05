@@ -2,7 +2,6 @@
 
 A secure, self-hosted infrastructure platform built on Ubuntu Server, Docker Compose, Caddy, and Tailscale.
 
-> **Scholarship project:** This repository documents the design, deployment, security model, monitoring, and automation of a personal homelab. The repository is intentionally configuration-focused: live secrets, databases, backups, and private keys are excluded.
 
 [Architecture](docs/architecture.md) · [Setup Guide](docs/SETUP.md) · [Security Design](docs/SECURITY.md) · [Screenshots](docs/SCREENSHOTS.md) · [Project Overview](docs/PROJECT-OVERVIEW.md)
 
