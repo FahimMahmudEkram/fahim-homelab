@@ -57,7 +57,7 @@ This project demonstrates practical CS and systems concepts:
 - reproducibility,
 - security-by-design.
 
-## Scholarship value
+## Why this project matters
 
 The strongest part of the project is not the number of applications. It is the engineering workflow:
 

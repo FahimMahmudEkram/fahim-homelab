@@ -17,4 +17,4 @@ Never add:
 
 Use local `.env` files or another secret-management method for deployment.
 
-The repository is suitable for scholarship review because it demonstrates the architecture and engineering work without publishing personal runtime data.
+The repository demonstrates the architecture and engineering work without publishing personal runtime data.

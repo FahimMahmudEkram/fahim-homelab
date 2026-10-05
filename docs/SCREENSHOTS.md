@@ -1,6 +1,6 @@
 # Screenshots
 
-Real screenshots should be added by the project owner. Do not invent or fabricate screenshots for a scholarship submission.
+Real screenshots should be added by the project owner. Do not invent or fabricate screenshots for project documentation.
 
 ## Recommended screenshots
 

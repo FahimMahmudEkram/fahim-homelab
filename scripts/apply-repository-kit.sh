@@ -21,7 +21,7 @@ cp "$KIT_DIR"/docs/screenshots/.gitkeep "$SRC/docs/screenshots/"
 cp "$KIT_DIR"/scripts/git-preflight.sh "$SRC/scripts/"
 chmod +x "$SRC/scripts/git-preflight.sh"
 
-echo "Professional scholarship repository files applied to:"
+echo "Professional repository files applied to:"
 echo "  $SRC"
 echo
 echo "Next:"
