@@ -1,0 +1,94 @@
+server:
+  hostname: fahim
+  os: Ubuntu Server
+  cpu_cores: 4
+  ram_gib: 7
+  swap_gib: 4
+
+network:
+  lan_ip: 192.168.1.240
+  tailscale_ip: 100.64.0.10
+  tailscale_hostname: homelab.example
+  ipv6: false
+  router_port_forwarding: false
+
+storage:
+  - device: /dev/nvme0n1p3
+    mount: /
+    purpose: operating system
+
+  - device: /dev/sda1
+    mount: /mnt/music
+    purpose: Navidrome music library
+
+  - device: /dev/sdb1
+    mount: /mnt/data
+    purpose: Nextcloud and Paperless data
+
+  - device: /dev/sdc1
+    mount: /mnt/immich
+    purpose: Immich media
+
+services:
+  - name: Vaultwarden
+    type: docker
+    url: https://homelab.example
+    tailscale_port: 443
+
+  - name: Navidrome
+    type: docker
+    url: https://homelab.example:8443
+    tailscale_port: 8443
+
+  - name: Paperless-ngx
+    type: docker
+    url: https://homelab.example:8444
+    tailscale_port: 8444
+
+  - name: Nextcloud
+    type: docker
+    url: https://homelab.example:8445
+    tailscale_port: 8445
+
+  - name: Immich
+    type: docker
+    url: https://homelab.example:8446
+    tailscale_port: 8446
+
+  - name: Firefly III
+    type: docker
+    url: https://homelab.example:8447
+    tailscale_port: 8447
+
+  - name: Homepage
+    type: docker
+    url: https://homelab.example:8448
+    tailscale_port: 8448
+
+  - name: Uptime Kuma
+    type: docker
+    url: https://homelab.example:8449
+    tailscale_port: 8449
+
+  - name: Beszel
+    type: docker
+    url: https://homelab.example:8450
+    tailscale_port: 8450
+
+  - name: AdGuard Home
+    type: docker
+    url: https://homelab.example:8451
+    tailscale_port: 8451
+
+  - name: Feishin
+    type: docker
+    url: https://homelab.example:8452
+    tailscale_port: 8452
+
+management:
+  homelab_root: /opt/homelab
+  documentation: /opt/homelab/README.md
+  inventory: /opt/homelab/inventory.yaml
+  caddy_config: /opt/homelab/caddy/Caddyfile
+  homepage_config: /opt/homelab/homepage/config
+  music_library: /mnt/music/library

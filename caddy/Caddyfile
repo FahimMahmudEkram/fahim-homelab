@@ -1,0 +1,54 @@
+:80 {
+    reverse_proxy homepage:3000
+}
+
+homelab.example {
+    reverse_proxy vaultwarden:80
+}
+
+homelab.example:8443 {
+    reverse_proxy navidrome:4533
+}
+
+homelab.example:8444 {
+    reverse_proxy paperless-webserver:8000
+}
+
+homelab.example:8445 {
+    reverse_proxy nextcloud:80
+}
+
+homelab.example:8446 {
+    reverse_proxy immich_server:2283
+}
+
+homelab.example:8447 {
+    reverse_proxy firefly_iii_core:8080
+}
+
+homelab.example:8448 {
+    handle_path /docs* {
+        root * /srv/homelab-docs
+        file_server
+    }
+
+    handle {
+        reverse_proxy homepage:3000
+    }
+}
+
+homelab.example:8449 {
+    reverse_proxy uptime-kuma:3001
+}
+
+homelab.example:8450 {
+    reverse_proxy 192.168.1.240:3003
+}
+
+homelab.example:8451 {
+    reverse_proxy 192.168.1.240:3000
+}
+
+homelab.example:8452 {
+    reverse_proxy feishin:9180
+}

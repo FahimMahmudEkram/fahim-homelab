@@ -1,0 +1,25 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    restart: unless-stopped
+
+    ports:
+      - "192.168.1.240:3001:3000"
+
+    environment:
+      HOMEPAGE_ALLOWED_HOSTS: "homelab.example:8448,fahim,192.168.1.240,100.64.0.10,192.168.1.240:3001,100.64.0.10:3001"
+
+    volumes:
+      - ./config:/app/config
+      - /mnt/data:/mnt/data:ro
+      - /mnt/music:/mnt/music:ro
+      - /mnt/immich:/mnt/immich:ro
+
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
+    name: proxy

@@ -1,0 +1,18 @@
+- greeting:
+    text: "Fahim's Homelab"
+    text_size: 4xl
+
+- resources:
+    label: NEXTCLOUD // DATA
+    disk: /mnt/data
+    refresh: 5000
+
+- resources:
+    label: NAVIDROME // MUSIC
+    disk: /mnt/music
+    refresh: 5000
+
+- resources:
+    label: IMMICH // MEDIA
+    disk: /mnt/immich
+    refresh: 5000

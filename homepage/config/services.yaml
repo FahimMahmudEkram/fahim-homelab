@@ -1,0 +1,65 @@
+- Core:
+    - Homepage:
+        id: homepage
+        href: https://homelab.example:8448
+        description: Homelab dashboard
+
+    - AdGuard Home:
+        id: adguard
+        href: https://homelab.example:8451
+        description: DNS and ad blocking
+
+- Monitoring:
+    - Uptime Kuma:
+        id: uptime
+        href: https://homelab.example:8449
+        description: Service monitoring and Telegram alerts
+
+    - Beszel:
+        id: beszel
+        href: https://homelab.example:8450
+        description: Server metrics and monitoring
+
+- Music:
+    - Feishin:
+        href: https://homelab.example:8452
+        description: Spotify-style music player
+
+    - Navidrome:
+        href: https://homelab.example:8443
+        description: Music server and administration
+
+- Applications:
+    - Vaultwarden:
+        id: vaultwarden
+        href: https://homelab.example
+        description: Password manager
+
+    - Paperless-ngx:
+        id: paperless
+        href: https://homelab.example:8444
+        description: Document management
+
+    - Nextcloud:
+        id: nextcloud
+        href: https://homelab.example:8445
+        description: Personal cloud storage
+
+    - Immich:
+        id: immich
+        href: https://homelab.example:8446
+        description: Photo and video management
+
+    - Firefly III:
+        id: firefly
+        href: https://homelab.example:8447
+        description: Personal finance management
+
+- Operations:
+    - Homelab Documentation:
+        href: https://homelab.example:8448/docs
+        description: Server configuration and recovery notes
+
+    - Tailscale Admin:
+        href: https://login.tailscale.com/admin/machines
+        description: Manage Tailscale devices and network

@@ -1,0 +1,33 @@
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    container_name: navidrome
+    restart: unless-stopped
+
+    user: "1000:1000"
+
+    environment:
+      ND_SCANNER_ENABLED: "true"
+      ND_SCANNER_SCHEDULE: "*/5 * * * *"
+      ND_SCANNER_WATCHERWAIT: "5s"
+      ND_LYRICSPRIORITY: "nd-lyrics,.ttml,.yaml,.yml,.elrc,.lrc,.srt,.txt,embedded"
+      ND_SCANSCHEDULE: "1h"
+      ND_LOGLEVEL: "info"
+      ND_BASEURL: "https://homelab.example:8443"
+      ND_LASTFM_ENABLED: "true"
+      ND_LASTFM_APIKEY: "${LASTFM_API_KEY}"
+      ND_LASTFM_SECRET: "${LASTFM_SECRET}"
+      ND_LASTFM_LANGUAGE: "en"
+      ND_AGENTS: "lastfm,listenbrainz,deezer"
+
+    volumes:
+      - ./data:/data
+      - /mnt/music/library:/music:ro
+
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
+    name: proxy

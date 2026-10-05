@@ -1,0 +1,26 @@
+services:
+  beszel-agent:
+    image: henrygd/beszel-agent:alpine
+    container_name: beszel-agent
+    restart: unless-stopped
+
+    network_mode: host
+
+    devices:
+      - /dev/sda:/dev/sda
+      - /dev/sdb:/dev/sdb
+      - /dev/sdc:/dev/sdc
+
+    cap_add:
+      - SYS_RAWIO
+
+    volumes:
+      - ./beszel_agent_data:/var/lib/beszel-agent
+      - ./beszel_socket:/beszel_socket
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+    environment:
+      LISTEN: /beszel_socket/beszel.sock
+      KEY: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICDI+Q8GMNKDPfITvC4Gd0PnERyZHWaYfPUDBgmKQtiL"
+      TOKEN: "${BESZEL_TOKEN}"
+      SMART_DEVICES: "/dev/sda:scsi,/dev/sdb:scsi,/dev/sdc:scsi"

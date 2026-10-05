@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#0b1220"/>
+  <style>
+    .title{font:700 28px sans-serif;fill:#e6f7ff}
+    .label{font:600 15px sans-serif;fill:#d8eaf2}
+    .small{font:500 13px sans-serif;fill:#a9c1cc}
+    .box{fill:#111c2f;stroke:#2aa7c9;stroke-width:2}
+    .svc{fill:#15263b;stroke:#406d8a;stroke-width:1.5}
+    .store{fill:#17291f;stroke:#48a868;stroke-width:1.5}
+    .arrow{stroke:#4dc8eb;stroke-width:2.2;fill:none;marker-end:url(#a)}
+  </style>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 z" fill="#4dc8eb"/>
+    </marker>
+  </defs>
+
+  <text x="50" y="55" class="title">Fahim's Homelab — High-Level Architecture</text>
+  <text x="50" y="82" class="small">Private self-hosted platform • Docker • Caddy • Tailscale</text>
+
+  <rect x="50" y="120" width="210" height="100" rx="14" class="box"/>
+  <text x="75" y="157" class="label">Client devices</text>
+  <text x="75" y="183" class="small">Laptop • Phone • Tablet</text>
+
+  <rect x="330" y="120" width="210" height="100" rx="14" class="box"/>
+  <text x="355" y="157" class="label">Tailscale</text>
+  <text x="355" y="183" class="small">Private remote access</text>
+
+  <rect x="610" y="120" width="250" height="100" rx="14" class="box"/>
+  <text x="635" y="157" class="label">Caddy</text>
+  <text x="635" y="183" class="small">HTTPS reverse proxy</text>
+  <text x="635" y="205" class="small">Private listeners: 8443–8452</text>
+
+  <path d="M260 170 H330" class="arrow"/>
+  <path d="M540 170 H610" class="arrow"/>
+
+  <rect x="50" y="280" width="1100" height="330" rx="18" class="box"/>
+  <text x="80" y="315" class="label">Ubuntu Server — Docker / proxy network</text>
+
+  <g>
+    <rect x="80" y="350" width="175" height="72" rx="10" class="svc"/>
+    <text x="100" y="380" class="label">Homepage</text><text x="100" y="402" class="small">Dashboard</text>
+    <rect x="275" y="350" width="175" height="72" rx="10" class="svc"/>
+    <text x="295" y="380" class="label">Navidrome</text><text x="295" y="402" class="small">Music server</text>
+    <rect x="470" y="350" width="175" height="72" rx="10" class="svc"/>
+    <text x="490" y="380" class="label">Feishin</text><text x="490" y="402" class="small">Music client</text>
+    <rect x="665" y="350" width="175" height="72" rx="10" class="svc"/>
+    <text x="685" y="380" class="label">Nextcloud</text><text x="685" y="402" class="small">Cloud files</text>
+    <rect x="860" y="350" width="250" height="72" rx="10" class="svc"/>
+    <text x="880" y="380" class="label">Immich / Paperless / Firefly</text><text x="880" y="402" class="small">Media • Documents • Finance</text>
+  </g>
+
+  <g>
+    <rect x="80" y="455" width="175" height="72" rx="10" class="svc"/>
+    <text x="100" y="485" class="label">Vaultwarden</text><text x="100" y="507" class="small">Password manager</text>
+    <rect x="275" y="455" width="175" height="72" rx="10" class="svc"/>
+    <text x="295" y="485" class="label">AdGuard Home</text><text x="295" y="507" class="small">DNS filtering</text>
+    <rect x="470" y="455" width="175" height="72" rx="10" class="svc"/>
+    <text x="490" y="485" class="label">Uptime Kuma</text><text x="490" y="507" class="small">Availability</text>
+    <rect x="665" y="455" width="175" height="72" rx="10" class="svc"/>
+    <text x="685" y="485" class="label">Beszel</text><text x="685" y="507" class="small">Host monitoring</text>
+    <rect x="860" y="455" width="250" height="72" rx="10" class="store"/>
+    <text x="880" y="485" class="label">Persistent storage</text><text x="880" y="507" class="small">/mnt/music • /mnt/data • /mnt/immich</text>
+  </g>
+
+  <path d="M735 220 V280" class="arrow"/>
+  <path d="M695 280 V350" class="arrow"/>
+  <path d="M850 280 V350" class="arrow"/>
+
+  <rect x="50" y="650" width="1100" height="60" rx="12" class="box"/>
+  <text x="75" y="686" class="label">Key security boundary:</text>
+  <text x="250" y="686" class="small">No router port forwarding • secrets excluded from Git • SSH limited to LAN/Tailscale</text>
+</svg>

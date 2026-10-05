@@ -1,0 +1,32 @@
+title: "Fahim's Homelab"
+description: "Private infrastructure command center"
+
+theme: dark
+color: cyan
+
+headerStyle: boxedWidgets
+cardStyle: hairline
+blockStyle: refined
+font: plexData
+
+useEqualHeights: true
+disableCollapse: true
+groupsInitiallyCollapsed: false
+hideVersion: true
+disableIndexing: true
+target: _self
+
+fullWidth: true
+
+layout:
+  Core:
+    style: row
+    columns: 2
+
+  Monitoring:
+    style: row
+    columns: 2
+
+  Applications:
+    style: row
+    columns: 3

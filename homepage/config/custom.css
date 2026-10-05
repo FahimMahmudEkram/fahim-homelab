@@ -1,0 +1,441 @@
+/* ============================================================
+   FAHIM'S HOMELAB // FUTURISTIC COMMAND CENTER
+   ============================================================ */
+
+:root {
+  --bg-0: #03070a;
+  --bg-1: #061116;
+  --panel: rgba(8, 18, 23, 0.82);
+  --panel-strong: rgba(10, 23, 29, 0.94);
+
+  --cyan: #62f3e5;
+  --cyan-dim: rgba(98, 243, 229, 0.16);
+  --cyan-line: rgba(98, 243, 229, 0.22);
+  --cyan-glow: rgba(98, 243, 229, 0.14);
+
+  --text: #e9fffc;
+  --muted: #7e9b99;
+  --muted-2: #5c7674;
+
+  --shadow:
+    0 18px 50px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+/* ------------------------------------------------------------
+   GLOBAL BACKGROUND
+   ------------------------------------------------------------ */
+
+html,
+body {
+  background: var(--bg-0) !important;
+}
+
+#page_container {
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(48, 150, 160, 0.16),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 5% 30%,
+      rgba(0, 120, 130, 0.08),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 95% 70%,
+      rgba(0, 100, 140, 0.07),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      #020507 0%,
+      #061116 48%,
+      #020507 100%
+    ) !important;
+}
+
+/* Technical grid */
+#page_container::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.32;
+
+  background-image:
+    linear-gradient(
+      rgba(98, 243, 229, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(98, 243, 229, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 34px 34px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      rgba(0,0,0,0.8) 55%,
+      transparent 100%
+    );
+}
+
+/* ------------------------------------------------------------
+   TOP HEADER / TELEMETRY
+   ------------------------------------------------------------ */
+
+#information-widgets {
+  position: relative;
+  margin-bottom: 2.2rem !important;
+}
+
+#information-widgets::before {
+  content: "PRIVATE INFRASTRUCTURE // ONLINE";
+  display: block;
+
+  color: var(--cyan);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+
+  text-align: center;
+  opacity: 0.72;
+
+  margin-bottom: 0.55rem;
+}
+
+/* Widget panels */
+#information-widgets .widget-container {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(10, 24, 29, 0.9),
+      rgba(5, 13, 17, 0.9)
+    ) !important;
+
+  border: 1px solid var(--cyan-line) !important;
+  border-radius: 14px !important;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+/* Greeting */
+#information-widgets .text-3xl,
+#information-widgets .text-4xl {
+  color: var(--text) !important;
+  letter-spacing: 0.08em;
+  text-shadow:
+    0 0 22px rgba(98, 243, 229, 0.22);
+}
+
+/* Widget labels */
+#information-widgets .text-theme-500,
+#information-widgets .text-theme-600 {
+  color: var(--muted) !important;
+  letter-spacing: 0.12em;
+}
+
+/* Resource values */
+#information-widgets .text-theme-100,
+#information-widgets .text-theme-200 {
+  color: var(--cyan) !important;
+}
+
+/* Resource progress bars */
+#information-widgets
+  [class*="bg-emerald"],
+#information-widgets
+  [class*="bg-cyan"] {
+  background-color: var(--cyan) !important;
+  box-shadow:
+    0 0 10px rgba(98, 243, 229, 0.35);
+}
+
+/* ------------------------------------------------------------
+   SECTION HEADERS
+   ------------------------------------------------------------ */
+
+section {
+  margin-bottom: 2.1rem !important;
+}
+
+section h2 {
+  color: var(--cyan) !important;
+
+  font-size: 0.78rem !important;
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  margin-bottom: 0.75rem !important;
+
+  text-shadow:
+    0 0 16px rgba(98, 243, 229, 0.18);
+}
+
+section h2::before {
+  content: "◆ ";
+  font-size: 0.55rem;
+  opacity: 0.8;
+}
+
+/* ------------------------------------------------------------
+   SERVICE CARDS
+   ------------------------------------------------------------ */
+
+.service-card {
+  position: relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(12, 25, 31, 0.94),
+      rgba(5, 13, 17, 0.94)
+    ) !important;
+
+  border: 1px solid rgba(98, 243, 229, 0.11) !important;
+  border-radius: 13px !important;
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+
+  width: 2px;
+
+  background: var(--cyan);
+
+  opacity: 0.32;
+
+  box-shadow:
+    0 0 12px rgba(98, 243, 229, 0.28);
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(14, 31, 38, 0.98),
+      rgba(6, 15, 19, 0.98)
+    ) !important;
+
+  border-color: rgba(98, 243, 229, 0.45) !important;
+
+  box-shadow:
+    0 20px 44px rgba(0, 0, 0, 0.44),
+    0 0 28px rgba(98, 243, 229, 0.06);
+}
+
+/* Service names */
+.service-name {
+  color: var(--text) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+}
+
+/* Descriptions */
+.service-description {
+  color: var(--muted) !important;
+}
+
+/* Icons */
+.service-icon img {
+  filter:
+    drop-shadow(0 0 7px rgba(98, 243, 229, 0.14));
+}
+
+/* ------------------------------------------------------------
+   STATUS / WIDGET BLOCKS
+   ------------------------------------------------------------ */
+
+.service-card .service-container {
+  color: var(--text);
+}
+
+.service-card .service-container .text-theme-500,
+.service-card .service-container .text-theme-600 {
+  color: var(--muted-2) !important;
+}
+
+.service-card .service-container .text-theme-100,
+.service-card .service-container .text-theme-200 {
+  color: var(--cyan) !important;
+}
+
+/* Green health dots become subtle cyan */
+.text-emerald-500,
+.text-green-500 {
+  color: var(--cyan) !important;
+
+  filter:
+    drop-shadow(
+      0 0 5px rgba(98, 243, 229, 0.75)
+    );
+}
+
+/* ------------------------------------------------------------
+   BOOKMARKS
+   ------------------------------------------------------------ */
+
+.bookmark-icon,
+.bookmark-text {
+  background:
+    rgba(7, 18, 23, 0.78) !important;
+
+  border: 1px solid rgba(98, 243, 229, 0.10) !important;
+}
+
+.bookmark-text {
+  color: var(--muted) !important;
+}
+
+.bookmark-icon {
+  color: var(--cyan) !important;
+}
+
+/* ------------------------------------------------------------
+   FOOTER / SCROLLBAR
+   ------------------------------------------------------------ */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020507;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    rgba(98, 243, 229, 0.18);
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    rgba(98, 243, 229, 0.38);
+}
+
+/* ------------------------------------------------------------
+   MOBILE
+   ------------------------------------------------------------ */
+
+@media (max-width: 700px) {
+  #information-widgets::before {
+    font-size: 0.5rem;
+    letter-spacing: 0.16em;
+  }
+
+  section h2 {
+    font-size: 0.68rem !important;
+  }
+
+  .service-card {
+    border-radius: 11px !important;
+  }
+}
+/* Command-center spacing */
+#information-widgets {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Equal visual weight for storage widgets */
+#information-widgets .widget-container {
+  min-height: 70px;
+}
+
+/* Stronger section divider */
+section {
+  position: relative;
+  padding-top: 0.35rem;
+}
+
+section h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+section h2::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(98, 243, 229, 0.25),
+    transparent
+  );
+}
+
+/* Cleaner footer */
+#page_container footer {
+  opacity: 0.35;
+}
+/* ============================================================
+   TOP TELEMETRY LAYOUT
+   ============================================================ */
+
+#information-widgets {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Keep the storage widgets compact and aligned */
+#information-widgets .widget-container {
+  min-height: 72px;
+}
+
+/* Reduce the visual dominance of the greeting */
+#information-widgets .text-4xl {
+  letter-spacing: 0.06em;
+}
+
+/* Storage widgets */
+#information-widgets > div:nth-child(n+3) {
+  min-width: 0;
+}
+/* ============================================================
+   APPLICATION GRID
+   ============================================================ */
+
+section:nth-of-type(3) .service-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+section h2 {
+  font-size: 0.72rem !important;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--cyan) !important;
+}
+
+section h2::before {
+  content: "▸";
+  margin-right: 0.4rem;
+  opacity: 0.8;
+}

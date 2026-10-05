@@ -1,0 +1,43 @@
+# Live environment files
+.env
+.env.*
+!.env.example
+!.db.env.example
+!.docker-compose.env.example
+
+# Secrets and private keys
+*.pem
+*.key
+*.crt
+*.csr
+secrets/
+credentials/
+
+# Runtime data and databases
+*/data/
+*/html/
+*/postgres/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+
+# Backups and exports
+backups/
+*.tar
+*.tar.gz
+*.zip
+*.bak
+*.backup
+
+# Generated documentation
+docs/index.html
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

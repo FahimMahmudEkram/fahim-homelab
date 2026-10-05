@@ -1,0 +1,88 @@
+services:
+  db:
+    image: postgres:18-alpine
+    container_name: nextcloud-db
+    restart: unless-stopped
+
+    env_file:
+      - db.env
+
+    volumes:
+      - db:/var/lib/postgresql
+
+    networks:
+      - default
+
+  redis:
+    image: valkey/valkey:9-alpine
+    container_name: nextcloud-redis
+    restart: unless-stopped
+
+    volumes:
+      - redis:/data
+
+    networks:
+      - default
+
+  nextcloud:
+    image: nextcloud:apache
+    container_name: nextcloud
+    restart: unless-stopped
+
+    depends_on:
+      - db
+      - redis
+
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_DB: nextcloud
+      POSTGRES_USER: nextcloud
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+
+      REDIS_HOST: redis
+
+      NEXTCLOUD_TRUSTED_DOMAINS: "homelab.example homelab.example:8445"
+
+      TRUSTED_PROXIES: "172.19.0.0/16"
+      APACHE_DISABLE_REWRITE_IP: "1"
+
+      OVERWRITEHOST: "homelab.example:8445"
+      OVERWRITEPROTOCOL: "https"
+      OVERWRITECLIURL: "https://homelab.example:8445"
+
+    env_file:
+      - db.env
+
+    volumes:
+      - ./html:/var/www/html
+      - /mnt/data/nextcloud/data:/var/www/html/data
+
+    networks:
+      - default
+      - proxy
+
+  cron:
+    image: nextcloud:apache
+    container_name: nextcloud-cron
+    restart: unless-stopped
+
+    entrypoint: /cron.sh
+
+    depends_on:
+      - nextcloud
+
+    volumes:
+      - ./html:/var/www/html
+      - /mnt/data/nextcloud/data:/var/www/html/data
+
+    networks:
+      - default
+
+networks:
+  proxy:
+    external: true
+    name: proxy
+
+volumes:
+  db:
+  redis:
