@@ -62,6 +62,17 @@ Navidrome provides a private music streaming and library management service runn
 
 This homelab consolidates personal cloud, media, document, finance, monitoring, DNS, and password-management services on a single Ubuntu Server while keeping remote access private through Tailscale.
 
+## Quick Start
+
+This repository contains the configuration needed to recreate the homelab on an Ubuntu Server.
+
+```bash
+git clone https://github.com/FahimMahmudEkram/fahim-homelab.git
+cd fahim-homelab
+```
+
+Review the example environment files, adjust host-specific paths and settings, create the required Docker network, and provide secrets through local environment files. Then follow the detailed [Setup Guide](docs/SETUP.md).
+
 ## Service Catalog
 
 | Service | Purpose |
