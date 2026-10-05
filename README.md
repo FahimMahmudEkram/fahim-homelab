@@ -41,6 +41,13 @@ Nextcloud provides private cloud storage and file management within the homelab.
 
 ![Nextcloud cloud storage](docs/screenshots/nextcloud.png)
 
+### Self-Hosted Music
+
+Navidrome provides a private music streaming and library management service running within the homelab.
+
+![Navidrome music library](docs/screenshots/navidrome.png)
+
+
 
 
 
