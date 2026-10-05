@@ -35,6 +35,13 @@ Paperless-ngx provides a self-hosted document management system with centralized
 
 ![Paperless-ngx document management](docs/screenshots/paperless.png)
 
+### Self-Hosted Cloud
+
+Nextcloud provides private cloud storage and file management within the homelab.
+
+![Nextcloud cloud storage](docs/screenshots/nextcloud.png)
+
+
 
 
 
