@@ -62,6 +62,24 @@ Navidrome provides a private music streaming and library management service runn
 
 This homelab consolidates personal cloud, media, document, finance, monitoring, DNS, and password-management services on a single Ubuntu Server while keeping remote access private through Tailscale.
 
+## Service Catalog
+
+| Service | Purpose |
+|---|---|
+| Homepage | Central dashboard for homelab services and operational links |
+| Caddy | HTTPS reverse proxy and service routing |
+| Tailscale | Private remote network access |
+| Uptime Kuma | Service availability monitoring |
+| Beszel | Host-level resource and system monitoring |
+| AdGuard Home | Network-wide DNS filtering |
+| Nextcloud | Private cloud storage and file management |
+| Immich | Self-hosted photo and video management |
+| Paperless-ngx | Document management and search |
+| Vaultwarden | Self-hosted password management |
+| Firefly III | Personal finance management |
+| Navidrome | Self-hosted music streaming |
+| Feishin | Web client for the music library |
+
 ### Highlights
 
 - **Containerized services** using Docker Compose.
