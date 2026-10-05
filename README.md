@@ -73,6 +73,38 @@ cd fahim-homelab
 
 Review the example environment files, adjust host-specific paths and settings, create the required Docker network, and provide secrets through local environment files. Then follow the detailed [Setup Guide](docs/SETUP.md).
 
+## Configuration Matrix
+
+Most of the repository is reusable as-is, but a few values must be customized for each installation. Real secrets should stay in local environment files and must never be committed.
+
+| Area | File | Customize | Secret? |
+|---|---|---|---|
+| Reverse proxy | `caddy/Caddyfile` | Replace the example hostname and any LAN/Tailscale backend addresses | No |
+| Host inventory | `inventory.yaml` | Server name, network details, storage paths, and hardware-specific values | No |
+| Nextcloud | `nextcloud/db.env.example` | `POSTGRES_PASSWORD` for the database | Yes |
+| Nextcloud | `nextcloud/compose.yml` | Trusted domain, external hostname, proxy settings, and `/mnt/data` storage path | No |
+| Immich | `immich/.env.example` | `UPLOAD_LOCATION`, `DB_DATA_LOCATION`, `TZ`, `IMMICH_VERSION`, `DB_PASSWORD` | `DB_PASSWORD` |
+| Paperless-ngx | `paperless/docker-compose.env.example` | UID/GID, `PAPERLESS_SECRET_KEY`, `PAPERLESS_DBPASS`, time zone, and public URL | Secret key + DB password |
+| Paperless-ngx | `paperless/.env.example` | Deployment values used by Paperless-ngx | Secret key + DB password |
+| Firefly III | `firefly/.env.example` | Owner email, `APP_KEY`, database password, optional Redis/SMTP credentials, OAuth key, cron token, and `APP_URL` | Several values |
+| Firefly III | `firefly/.db.env.example` | Database password and database identity if changed | `MYSQL_PASSWORD` |
+| Navidrome | `navidrome/compose.yml` | `ND_BASEURL`, music-library path, Last.fm credentials | Last.fm credentials |
+| Beszel | `beszel/compose.yml` | `BESZEL_TOKEN` and host-specific disk/device mappings | `BESZEL_TOKEN` |
+| Homepage | `homepage/config/*` | Service URLs, labels, widgets, and integrations | Depends on integration |
+| Feishin | `feishin/compose.yml` | Review service URL and host-specific settings | Usually no |
+| Uptime Kuma | `uptime-kuma/compose.yml` | Review host paths and networking | Usually no |
+| AdGuard Home | `adguard/compose.yml` | Review ports, volumes, and host-specific networking | Depends on live config |
+| Vaultwarden | `vaultwarden/compose.yml` | Review persistent storage, hostname, and deployment settings | Depends on deployment |
+| Docker network | All Compose files | Create the shared external `proxy` network before deployment | No |
+
+### Secret vs. configuration
+
+**Secret values** should be generated independently for every installation. Examples include database passwords, application secret keys, OAuth/private keys, API credentials, and service tokens.
+
+**Configuration values** such as hostnames, mount paths, time zones, UID/GID values, Docker device names, and storage locations normally need to be changed when moving the project to another server.
+
+The repository intentionally provides `*.example` files as templates. Copy them to local files, fill in the real values, and keep those local files out of Git.
+
 ## Service Catalog
 
 | Service | Purpose |
